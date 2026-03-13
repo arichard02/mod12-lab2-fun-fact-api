@@ -1,3 +1,25 @@
+Reflection Questions:
+
+After completing this activity, consider the following:
+
+Why was it important to re-format the data from the Useless Facts API before sending it to your own client? What are the benefits of an API providing a clean, minimal response?
+
+It was important to re-format the data because the API sends back a lot of extra information that the client doesn’t really need. For this project we only needed the actual fact, so it made sense to just send that instead of the whole response object. Doing this keeps the response simpler and easier for the client to use. A clean and minimal response also helps reduce unnecessary data being sent and makes the API easier to understand and work with.
+
+
+
+In the catch block, why is it better to send a generic error message to the client instead of the actual error object from axios?
+
+It’s better to send a generic error message because the axios error object can contain a lot of technical details about the server or the request. Those details aren’t helpful for the client and could expose information that shouldn’t be shared. Sending a simple error message lets the client know something went wrong without showing internal system details.
+
+
+
+How might you modify this application to get a fact in a different language if the external API supported it (e.g., with a query parameter like ?language=de)?
+
+If the API supported different languages, I could update the axios request by adding a query parameter to the URL. For example, adding ?language=de would return a fact in German. Another option would be to let the client send a language choice in the request and then pass that value to the external API so the fact is returned in the language the user selected.
+
+
+
 ## Scenario
 The owner of “The Daily Grind” coffee shop was so impressed with your first server that they have a new request. They want to add a “Fun Fact of the Day” to a digital screen in their shop. To do this, they need an API endpoint on their server that fetches a random fun fact from an external public API and provides it in a simple format.
 
@@ -56,3 +78,5 @@ After completing this activity, consider the following:
 Why was it important to re-format the data from the Useless Facts API before sending it to your own client? What are the benefits of an API providing a clean, minimal response?
 In the catch block, why is it better to send a generic error message to the client instead of the actual error object from axios?
 How might you modify this application to get a fact in a different language if the external API supported it (e.g., with a query parameter like ?language=de)?
+
+
